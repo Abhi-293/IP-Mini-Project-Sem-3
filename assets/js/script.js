@@ -33,13 +33,8 @@ async function fetchContacts() {
     if (stored) {
         contacts = JSON.parse(stored);
     } else {
-        // Dummy Data for initial load
-        contacts = [
-            // { id: 'c1', name: 'Alina Sharma', email: 'alina.sharma@example.com', phone: '98765 43210', company: 'Tech Innovators', lastContacted: '2024-10-15' },
-            // { id: 'c2', name: 'Ravi Verma', email: 'ravi.verma@consult.net', phone: '99001 23456', company: 'Global Consult', lastContacted: '2024-10-20' },
-            // { id: 'c3', name: 'Priya Singh', email: 'priya.singh@design.org', phone: '87654 32109', company: 'Creative Hub', lastContacted: '2024-09-28' },
-            // { id: 'c4', name: 'Amit Desai', email: 'amit.desai@corp.io', phone: '76543 21098', company: 'Finance Solutions', lastContacted: '2024-10-01' },
-        ];
+        // Dummy Data for initial load (removed)
+        contacts = [];
     }
     return Promise.resolve(contacts);
 }
@@ -132,18 +127,19 @@ function renderContacts(displayContacts = contacts) {
  */
 function createListRow(contact) {
     const row = document.createElement('div');
-    row.className = 'contact-fade-in flex flex-col sm:flex-row items-start sm:items-center bg-gray-800 p-4 rounded-xl shadow-lg border-l-4 border-primary transition duration-300 hover:shadow-xl hover:border-indigo-500';
+    row.className = 'contact-fade-in contact-row flex flex-col sm:flex-row items-start sm:items-center bg-gray-800 p-4 rounded-xl shadow-lg border-l-4 border-primary transition duration-300 hover:shadow-xl hover:border-indigo-500';
     row.innerHTML = `
         <div class="flex-grow min-w-0 mb-3 sm:mb-0">
             <p class="text-lg font-semibold text-white truncate">${contact.name}</p>
             <div class="text-sm text-gray-400 flex flex-wrap gap-x-4">
-                <span class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-1 text-indigo-400"></i> ${contact.email}</span>
+                <span class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-1 text-indigo-400"></i> <span class="truncate">${contact.email}</span></span>
                 <span class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-1 text-indigo-400"></i> ${contact.phone || 'N/A'}</span>
-                ${contact.company ? `<span class="flex items-center"><i data-lucide="building" class="w-4 h-4 mr-1 text-indigo-400"></i> ${contact.company}</span>` : ''}
+                ${contact.company ? `<span class="flex items-center"><i data-lucide="building" class="w-4 h-4 mr-1 text-indigo-400"></i> <span class="truncate">${contact.company}</span></span>` : ''}
             </div>
         </div>
         <!-- Action Buttons -->
         <div class="flex space-x-2 mt-2 sm:mt-0 sm:ml-4">
+            ${contact.phone ? `<a href="tel:${contact.phone}" title="Call Contact" class="p-2 text-green-400 rounded-full hover:bg-gray-700 transition"><i data-lucide="phone" class="w-5 h-5"></i></a>` : ''}
             <button onclick="openContactModal('${contact.id}')" title="Edit Contact"
                     class="p-2 text-indigo-300 rounded-full hover:bg-gray-700 transition">
                 <i data-lucide="square-pen" class="w-5 h-5"></i>
@@ -162,11 +158,12 @@ function createListRow(contact) {
  */
 function createGridCard(contact) {
     const card = document.createElement('div');
-    card.className = 'contact-fade-in bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col transition duration-300 hover:shadow-2xl border border-gray-700 hover:border-primary';
+    card.className = 'contact-fade-in contact-card bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col transition duration-300 hover:shadow-2xl border border-gray-700 hover:border-primary';
     card.innerHTML = `
         <div class="flex items-center justify-between mb-4">
             <i data-lucide="user-circle" class="w-10 h-10 text-primary"></i>
             <div class="flex space-x-2">
+                ${contact.phone ? `<a href="tel:${contact.phone}" title="Call Contact" class="p-1 text-green-400 rounded-full hover:bg-gray-700 transition"><i data-lucide="phone" class="w-5 h-5"></i></a>` : ''}
                 <button onclick="openContactModal('${contact.id}')" title="Edit Contact"
                         class="p-1 text-indigo-300 rounded-full hover:bg-gray-700 transition">
                     <i data-lucide="square-pen" class="w-5 h-5"></i>
@@ -179,9 +176,9 @@ function createGridCard(contact) {
         </div>
         <p class="text-xl font-bold mb-2 text-white truncate">${contact.name}</p>
         <div class="space-y-2 text-sm text-gray-300 flex-grow">
-            <p class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2 text-indigo-400"></i> ${contact.email}</p>
+            <p class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2 text-indigo-400"></i> <span class="truncate">${contact.email}</span></p>
             <p class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2 text-indigo-400"></i> ${contact.phone || 'N/A'}</p>
-            ${contact.company ? `<p class="flex items-center"><i data-lucide="building" class="w-4 h-4 mr-2 text-indigo-400"></i> ${contact.company}</p>` : ''}
+            ${contact.company ? `<p class="flex items-center"><i data-lucide="building" class="w-4 h-4 mr-2 text-indigo-400"></i> <span class="truncate">${contact.company}</span></p>` : ''}
         </div>
     `;
     return card;

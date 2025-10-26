@@ -19,3 +19,17 @@ body::-webkit-scrollbar-thumb {
 html, body, #app {
     min-height: 100vh;
 }
+
+/* Uniform card heights in grid view */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+/* Uniform row heights in list view */
+.contact-row {
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+}

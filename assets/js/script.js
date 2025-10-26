@@ -33,8 +33,15 @@ async function fetchContacts() {
     if (stored) {
         contacts = JSON.parse(stored);
     } else {
-        // Dummy Data for initial load (removed)
-        contacts = [];
+        // Sample emergency and personal contacts for initial load
+        contacts = [
+            { id: generateUniqueId(), name: 'Emergency', email: '', phone: '112', company: '' },
+            { id: generateUniqueId(), name: 'Police', email: '', phone: '100', company: '' },
+            { id: generateUniqueId(), name: 'Abhishek', email: '', phone: '8483084765', company: '' },
+            { id: generateUniqueId(), name: 'Sanchita', email: '', phone: '7304013502', company: '' },
+            { id: generateUniqueId(), name: 'Diya', email: '', phone: '8007857018', company: '' }
+        ];
+        saveContacts(); // Save the initial sample contacts
     }
     return Promise.resolve(contacts);
 }

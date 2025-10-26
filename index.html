@@ -22,12 +22,12 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Lucide icons for clean, modern look -->
     <script type="module" src="https://unpkg.com/lucide@latest"></script>
-</head>
+  </head>
 
-<body class="bg-gray-900 text-gray-100 font-sans p-4 md:p-8">
+  <body class="bg-gray-900 text-gray-100 font-sans p-4 md:p-8">
     <div id="app" class="max-w-7xl mx-auto">
 
         <!-- Header and Module Context -->
@@ -42,7 +42,7 @@
 
         <!-- Control Bar (Search, Filter, View Mode, Add Button) -->
         <section class="bg-gray-800 p-4 md:p-6 rounded-xl shadow-xl mb-8 flex flex-col md:flex-row gap-4 items-center">
-            
+
             <!-- Search Input -->
             <div class="relative flex-grow w-full md:w-auto">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -64,7 +64,7 @@
                         <i data-lucide="layout-grid" class="w-5 h-5"></i>
                     </button>
                 </div>
-                
+
                 <!-- Add New Contact Button (CRUD: Create) -->
                 <button onclick="openContactModal()"
                         class="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-150 ease-in-out">
@@ -91,7 +91,7 @@
         <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden items-center justify-center p-4" onclick="closeContactModal(event)">
             <div class="bg-gray-800 rounded-xl shadow-2xl w-full max-w-lg p-6 md:p-8" onclick="event.stopPropagation()">
                 <h2 id="modal-title" class="text-2xl font-bold mb-6 text-primary">Add New Contact</h2>
-                
+
                 <form id="contact-form">
                     <!-- Hidden input for ID (used for Update operations) -->
                     <input type="hidden" id="contact-id">
@@ -99,13 +99,13 @@
                     <div class="space-y-4">
                         <input type="text" id="name" placeholder="Full Name" required
                                class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:ring-primary focus:border-primary transition" />
-                        
+
                         <input type="email" id="email" placeholder="Email Address (e.g., example@company.com)" required
                                class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:ring-primary focus:border-primary transition" />
-                        
+
                         <input type="tel" id="phone" placeholder="Phone Number"
                                class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:ring-primary focus:border-primary transition" />
-                        
+
                         <input type="text" id="company" placeholder="Company/Organization"
                                class="w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:ring-primary focus:border-primary transition" />
                     </div>
@@ -123,9 +123,9 @@
                 </form>
             </div>
         </div>
-        
+
     </div>
 
-    <script src="../assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

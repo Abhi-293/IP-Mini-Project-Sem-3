@@ -406,6 +406,9 @@ This project is developed for educational purposes as part of the Industry Pract
 ---
 
 **Contributors**: Abhishek Vishwakarma, Sanchita Warkad, Diya Tailor
-**Course**: Industry Practices - JAVA
+<br>
+**Course**: Industrial Practices - Full stack JAVA development course
+<br>
 **Institution**: Thakur College of Engineering and Technology (TCET)
+<br>
 **Date**: October 2025

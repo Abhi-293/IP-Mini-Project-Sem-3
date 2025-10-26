@@ -1,17 +1,17 @@
-# Contact Manager Pro
+# Contact Manager  
 
 ## Overview
 
-**Contact Manager Pro** is a comprehensive mini project developed as part of the Industrial Practices Evaluation for Full Stack Development (FSD). This application demonstrates fundamental concepts in web development, including HTML structure, CSS styling, JavaScript DOM manipulation, and simulated backend integration with Java technologies. It serves as a practical showcase of building a responsive, interactive contact management system entirely in the browser.
+**Contact Manager  ** is a comprehensive mini  ject developed as part of the Industrial Practices Evaluation for Full Stack Development (FSD). This application demonstrates fundamental concepts in web development, including HTML structure, CSS styling, JavaScript DOM manipulation, and simulated backend integration with Java technologies. It serves as a practical showcase of building a responsive, interactive contact management system entirely in the browser.
 
-The project simulates a full-stack application where the frontend communicates with a Java Spring Boot/Servlet API, fulfilling CRUD (Create, Read, Update, Delete) operations through client-side JavaScript functions that mimic API calls.
+The  ject simulates a full-stack application where the frontend communicates with a Java Spring Boot/Servlet API, fulfilling CRUD (Create, Read, Update, Delete) operations through client-side JavaScript functions that mimic API calls.
 
 ## Features
 
 - **Contact Management (CRUD Operations)**
   - Add new contacts with name, email, phone, and company details
   - Edit existing contact information
-  - Delete contacts with confirmation prompts
+  - Delete contacts with confirmation  mpts
   - Unique ID generation for each contact (simulating database primary keys)
 
 - **Search and Filtering**
@@ -24,7 +24,7 @@ The project simulates a full-stack application where the frontend communicates w
   - Smooth transitions between view modes
 
 - **Responsive Design**
-  - Mobile-first approach with Tailwind CSS
+  - Mobile-first ap ach with Tailwind CSS
   - Adaptive layouts for desktop, tablet, and mobile devices
   - Custom scrollbar styling for enhanced aesthetics
 
@@ -37,7 +37,7 @@ The project simulates a full-stack application where the frontend communicates w
 
 - **Simulated Backend Integration**
   - Mock API calls to Java endpoints (`/api/contacts`)
-  - Asynchronous operations with Promise-based functions
+  - Asynchronous operations with  mise-based functions
   - Console logging for API simulation tracking
 
 ## Technologies Used
@@ -47,15 +47,15 @@ The project simulates a full-stack application where the frontend communicates w
 - **JavaScript (ES6+)**: DOM manipulation, event handling, and async operations
 - **Tailwind CSS**: Utility-first CSS framework for responsive design
 - **Lucide Icons**: Modern, scalable icon library
-- **Google Fonts (Inter)**: Clean, professional typography
+- **Google Fonts (Inter)**: Clean,  fessional typography
 - **Simulated Java Backend**: Spring Boot/Servlet API concepts demonstrated through JavaScript
 
-## Project Modules
+##  ject Modules
 
 The application is structured around educational modules demonstrating different aspects of full-stack development:
 
 ### Module 1 & 2: Java/OOP Concepts via JavaScript Analogues
-- Demonstrates object-oriented programming principles
+- Demonstrates object-oriented  gramming principles
 - Data structures and methods mirroring Java classes
 - Unique ID generation (analogous to database auto-increment)
 - Array manipulation for data persistence
@@ -68,13 +68,13 @@ The application is structured around educational modules demonstrating different
 
 ### Module 4: JavaScript & DOM Manipulation
 - Dynamic content rendering
-- Event-driven programming
+- Event-driven  gramming
 - Form handling and validation
 - Real-time UI updates
 
 ### Module 6: Frontend/Java Integration
 - Simulated RESTful API interactions
-- Asynchronous JavaScript with Promises
+- Asynchronous JavaScript with  mises
 - CRUD operations mapping to HTTP methods
 - Error handling and logging
 
@@ -88,12 +88,12 @@ The application is structured around educational modules demonstrating different
 2. **Running the Application**
 
    ### Frontend Only (Client-Side)
-   - Clone or download the project files
+   - Clone or download the  ject files
    - Open `contact/index.html` in your web browser
-   - No build process or server required - it's a client-side application
+   - No build  cess or server required - it's a client-side application
 
    ### With Local Server (Recommended)
-   - Start a local HTTP server in the project root directory:
+   - Start a local HTTP server in the  ject root directory:
      ```
      python -m http.server 8000
      ```
@@ -164,7 +164,7 @@ The application is structured around educational modules demonstrating different
 
 ## Development Notes
 
-- **Data Persistence**: Currently uses in-memory storage. In a production environment, this would connect to a real database via the Java backend.
+- **Data Persistence**: Currently uses in-memory storage. In a  duction environment, this would connect to a real database via the Java backend.
 - **API Simulation**: All backend calls are mocked. Replace the `fetch` calls with actual API endpoints for full integration.
 - **Performance**: Optimized for small to medium contact lists. For larger datasets, consider pagination and server-side filtering.
 - **Security**: Client-side validation only. Server-side validation should be implemented in the Java backend.
@@ -183,7 +183,7 @@ The application is structured around educational modules demonstrating different
 
 ### 1. Contact Management (CRUD Operations)
 
-The application provides full CRUD functionality for managing contacts. Here's how each operation works:
+The application  vides full CRUD functionality for managing contacts. Here's how each operation works:
 
 #### Create Operation
 When adding a new contact, the form data is collected and sent to the simulated API:
@@ -227,7 +227,7 @@ async function apiAddContact(contactData) {
     const newContact = { ...contactData, id: generateUniqueId() };
     contacts.push(newContact);
     saveContacts(); // Persist to localStorage
-    return Promise.resolve(newContact);
+    return  mise.resolve(newContact);
 }
 ```
 
@@ -246,7 +246,7 @@ async function fetchContacts() {
         // Dummy Data for initial load
         contacts = [];
     }
-    return Promise.resolve(contacts);
+    return  mise.resolve(contacts);
 }
 ```
 
@@ -386,7 +386,7 @@ class ContactService {
 
 ## Contributing
 
-This is an educational mini project. For improvements or modifications:
+This is an educational mini  ject. For im vements or modifications:
 1. Fork the repository
 2. Make your changes
 3. Test thoroughly
@@ -394,7 +394,7 @@ This is an educational mini project. For improvements or modifications:
 
 ## License
 
-This project is developed for educational purposes as part of the Industry Practices - JAVA course. Feel free to use and modify for learning purposes.
+This  ject is developed for educational purposes as part of the Industry Practices - JAVA course. Feel free to use and modify for learning purposes.
 
 ## Acknowledgments
 
